@@ -53,12 +53,20 @@ fetch("schools.json")
 
             const bounds = [];
 
-            filtered.forEach(d => {
+           filtered.forEach(d => {
 
-                const lat = parseFloat(d["Latitude"]);
-                const lng = parseFloat(d["Longitude"]);
+    const lat = Number(d["Latitude"]);
+    const lng = Number(d["Longitude"]);
 
-                if (isNaN(lat) || isNaN(lng)) return;
+    console.log(
+        d["Full Name"],
+        lat,
+        lng
+    );
+
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+        return;
+    }
 
                 const marker = L.marker([lat, lng]);
 
