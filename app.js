@@ -38,8 +38,9 @@ fetch("schools.json")
     .then(r => r.json())
     .then(data => {
 
-        const cluster = L.markerClusterGroup({
-    disableClusteringAtZoom: 8
+  const cluster = L.markerClusterGroup({
+    disableClusteringAtZoom: 8,
+    maxClusterRadius: 40
 });
         map.addLayer(cluster);
 
