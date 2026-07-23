@@ -26,3 +26,18 @@ body{margin:0;font-family:Segoe UI,sans-serif}#map{height:100vh}.sidebar{positio
 .legend p {
     margin: 6px 0;
 }
+
+#clearFilters {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #5B2C83;
+    color: white;
+    cursor: pointer;
+}
+
+#clearFilters:hover {
+    background: #482266;
+}
