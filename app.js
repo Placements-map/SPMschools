@@ -201,6 +201,13 @@ font-family:Segoe UI,sans-serif;
 
         render();
 
+        
+window.focusSchool = function(lat, lng) {
+
+    map.setView([lat, lng], 12);
+
+};
+
         document
             .getElementById("findNearest")
             .onclick = async () => {
