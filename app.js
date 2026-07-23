@@ -232,16 +232,27 @@ font-family:Segoe UI,sans-serif;
                     div.innerHTML =
                         "<h4>Nearest Schools</h4>";
 
-                    near.forEach(n => {
+                    near.forEach((n, index) => {
 
-                        div.innerHTML += `
-                            <div class="result-item">
-                                <b>${n["Full Name"]}</b><br>
-                                ${n.miles.toFixed(1)} miles
-                            </div>
-                        `;
+    div.innerHTML += `
+        <div class="result-item">
 
-                    });
+            ${index === 0 ? "⭐ " : ""}
+
+            <b>${n["Full Name"]}</b>
+
+            <br>
+
+            ${n["School Phase"]}
+
+            <br>
+
+            ${n.miles.toFixed(1)} miles away
+
+        </div>
+    `;
+
+});
 
                     if (near.length > 0) {
 
