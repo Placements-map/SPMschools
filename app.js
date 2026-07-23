@@ -1,4 +1,29 @@
 const map = L.map("map").setView([54, -2], 6);
+function getPinColour(phase) {
+
+    let colour = "blue";
+
+    if (phase.includes("Primary")) {
+        colour = "green";
+    }
+    else if (phase.includes("Secondary")) {
+        colour = "violet";
+    }
+    else if (phase.includes("All")) {
+        colour = "orange";
+    }
+
+    return new L.Icon({
+        iconUrl:
+            `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${colour}.png`,
+        shadowUrl:
+            "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+        iconSize: [25,41],
+        iconAnchor:[12,41],
+        popupAnchor:[1,-34]
+    });
+
+}
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "© OpenStreetMap"
