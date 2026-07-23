@@ -70,14 +70,47 @@ fetch("schools.json")
 
                 const marker = L.marker([lat, lng]);
 
-                marker.bindPopup(`
-                    <b>${d["Full Name"]}</b><br>
-                    ${d["School Phase"]}<br><br>
-                    ${d["Preferred Address Line 1"] || ""}<br>
-                    ${d["Preferred Town"] || ""}<br>
-                    ${d["Preferred Postcode"] || ""}
-                `);
+               marker.bindPopup(`
+<div style="
+padding:10px;
+min-width:220px;
+font-family:Segoe UI,sans-serif;
+">
+    <h3 style="
+        margin:0 0 8px 0;
+        color:#5B2C83;
+    ">
+        ${d["Full Name"]}
+    </h3>
 
+    <div style="
+        font-weight:bold;
+        color:#00A3A3;
+        margin-bottom:8px;
+    ">
+        ${d["School Phase"]}
+    </div>
+
+    <div>
+        📍 ${d["Preferred Address Line 1"] || ""}
+    </div>
+
+    <div>
+        ${d["Preferred Town"] || ""}
+    </div>
+
+    <div>
+        ${d["Preferred Postcode"] || ""}
+    </div>
+
+    <hr>
+
+    <div>
+        Region:
+        ${d["Region"]}
+    </div>
+</div>
+`);
                 cluster.addLayer(marker);
 
                 bounds.push([lat, lng]);
