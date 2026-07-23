@@ -187,6 +187,18 @@ font-family:Segoe UI,sans-serif;
             x.oninput = render;
         });
 
+        document
+    .getElementById("clearFilters")
+    .onclick = () => {
+
+        search.value = "";
+        phase.value = "";
+        region.value = "";
+
+        render();
+
+    };
+
         render();
 
         document
