@@ -38,7 +38,9 @@ fetch("schools.json")
     .then(r => r.json())
     .then(data => {
 
-        const cluster = L.markerClusterGroup();
+        const cluster = L.markerClusterGroup({
+    disableClusteringAtZoom: 8
+});
         map.addLayer(cluster);
 
         [...new Set(data.map(x => x["School Phase"]))]
