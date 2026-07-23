@@ -1,1 +1,12 @@
 body{margin:0;font-family:Segoe UI,sans-serif}#map{height:100vh}.sidebar{position:absolute;z-index:1000;left:12px;top:12px;width:330px;background:#fff;padding:16px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);max-height:90vh;overflow:auto}input,select,button{width:100%;box-sizing:border-box;padding:10px;margin:5px 0;border:1px solid #ccc;border-radius:8px}button{background:#00a3a3;color:#fff;border:none}#nearestResults{font-size:14px}.result-item{padding:8px;border-bottom:1px solid #eee}
+.result-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #f8f8f8;
+    border-left: 5px solid #00A3A3;
+}
+
+.result-item b {
+    color: #5B2C83;
+}
