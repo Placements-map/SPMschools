@@ -10,3 +10,19 @@ body{margin:0;font-family:Segoe UI,sans-serif}#map{height:100vh}.sidebar{positio
 .result-item b {
     color: #5B2C83;
 }
+
+.legend {
+    margin-top: 20px;
+    padding: 12px;
+    background: #f8f8f8;
+    border-radius: 10px;
+}
+
+.legend h4 {
+    margin-top: 0;
+    color: #5B2C83;
+}
+
+.legend p {
+    margin: 6px 0;
+}
