@@ -256,8 +256,17 @@ window.focusSchool = function(lat, lng) {
 
                     near.forEach((n, index) => {
 
-    div.innerHTML += `
-        <div class="result-item">
+  div.innerHTML += `
+<div
+    class="result-item"
+    style="cursor:pointer;"
+    onclick="
+        window.focusSchool(
+            ${parseFloat(n['Latitude'])},
+            ${parseFloat(n['Longitude'])}
+        );
+    "
+>
 
             ${index === 0 ? "⭐ " : ""}
 
