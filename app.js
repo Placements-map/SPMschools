@@ -93,7 +93,14 @@ fetch("schools.json")
         return;
     }
 
-                const marker = L.marker([lat, lng]);
+               const marker = L.marker(
+    [lat, lng],
+    {
+        icon: getPinColour(
+            d["School Phase"]
+        )
+    }
+);
 
                marker.bindPopup(`
 <div style="
