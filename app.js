@@ -158,3 +158,124 @@ fetch("schools.json")
             const dLat = (lat2 - lat1) * Math.PI / 180;
             const dLon = (lon2 - lon1) * Math.PI / 180;
 
+            const a =
+                Math.sin(dLat / 2) ** 2 +
+                Math.cos(lat1 * Math.PI / 180) *
+                Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon / 2) ** 2;
+
+            const c =
+                2 * Math.atan2(
+                    Math.sqrt(a),
+                    Math.sqrt(1 - a)
+                );
+
+            return (R * c) * 0.621371;
+        }
+
+        [search, phase, region].forEach(x => {
+            x.oninput = render;
+        });
+
+        const clearFilters =
+            document.getElementById("clearFilters");
+
+        if (clearFilters) {
+
+            clearFilters.onclick = () => {
+
+                search.value = "";
+                phase.value = "";
+                region.value = "";
+
+                render();
+
+            };
+
+        }
+
+        render();
+
+        document
+            .getElementById("findNearest")
+            .onclick = async () => {
+
+                const pc =
+                    document
+                        .getElementById("postcodeSearch")
+                        .value
+                        .trim();
+
+                if (!pc) return;
+
+                try {
+
+                    const response = await fetch(
+                        `https://api.postcodes.io/postcodes/${encodeURIComponent(pc)}`
+                    );
+
+                    const result = await response.json();
+
+                    if (!result.result) {
+                        alert("Postcode not found");
+                        return;
+                    }
+
+                    const near = data
+                        .map(s => ({
+                            ...s,
+                            miles: distanceMiles(
+                                result.result.latitude,
+                                result.result.longitude,
+                                parseFloat(s["Latitude"]),
+                                parseFloat(s["Longitude"])
+                            )
+                        }))
+                        .sort((a, b) => a.miles - b.miles)
+                        .slice(0, 10);
+
+                    const div =
+                        document.getElementById(
+                            "nearestResults"
+                        );
+
+                    div.innerHTML =
+                        "<h4>Nearest Schools</h4>";
+
+                    near.forEach((n, index) => {
+
+                        div.innerHTML += `
+                            <div class="result-item">
+                                ${index === 0 ? "⭐ " : ""}
+                                <b>${n["Full Name"]}</b>
+                                <br>
+                                ${n["School Phase"]}
+                                <br>
+                                ${n.miles.toFixed(1)} miles away
+                            </div>
+                        `;
+
+                    });
+
+                    if (near.length > 0) {
+
+                        map.setView([
+                            parseFloat(near[0]["Latitude"]),
+                            parseFloat(near[0]["Longitude"])
+                        ], 10);
+
+                    }
+
+                }
+                catch (err) {
+
+                    console.error(err);
+                    alert(
+                        "Unable to search postcode"
+                    );
+
+                }
+
+            };
+
+    });
