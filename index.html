@@ -1,27 +1,88 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Place2Be School Finder</title><link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"><link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css"><link rel="stylesheet" href="styles.css"></head><body><div class="sidebar"><div style="text-align:center;">
+<!doctype html>
+<html>
 
-    <img
-        src="place2be-logo.png"
-        alt="Place2Be"
-        style="
-            max-width:180px;
-            margin-bottom:10px;
-      
+<head>
+    <meta charset="utf-8">
 
-<p style="margin-top:0;color:#666;">
-    Find a placement school near you
-</p><div id="count"></div><input id="postcodeSearch" placeholder="Enter your postcode"><button id="findNearest">Find Schools Near Me</button><div id="nearestResults"></div><input id="search" placeholder="Search school, town or postcode"><select id="phase"><option value="">All phases</option></select><select id="region"><option value="">All regions</option></select><button id="clearFilters">
-    Clear Filters
-</button><div class="legend">
+    <title>Place2Be School Finder</title>
 
-<h4>School Types</h4>
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css">
 
-<p>🟢 Primary</p>
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
 
-<p>🟣 Secondary</p>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-<p>🟠 All Through</p>
+<body>
 
-<p>🔵 Other</p>
+    <div class="sidebar">
 
-</div></div><div id="map"></div><script src="https://unpkg.com/leaflet/dist/leaflet.js"></script><script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script><script src="app.js"></script></body></html>
+        <div style="text-align:center; margin-bottom:15px;">
+
+            <img
+                src="Place2Be%20strapline%20colour.png"
+                alt="Place2Be"
+                style="
+                    max-width:220px;
+                    width:100%;
+                    height:auto;
+                  "></div>
+
+        <input
+            id="postcodeSearch"
+            placeholder="Enter your postcode"
+        >
+
+        <button id="findNearest">
+            Find Schools Near Me
+        </button>
+
+        <div id="nearestResults"></div>
+
+        <input
+            id="search"
+            placeholder="Search school, town or postcode"
+        >
+
+        <select id="phase">
+            <option value="">
+                All phases
+            </option>
+        </select>
+
+        <select id="region">
+            <option value="">
+                All regions
+            </option>
+        </select>
+
+        <button id="clearFilters">
+            Clear Filters
+        </button>
+
+        <div class="legend">
+
+            <h4>School Types</h4>
+
+            <p>🟢 Primary</p>
+            <p>🟣 Secondary</p>
+            <p>🟠 All Through</p>
+            <p>🔵 Other</p>
+
+        </div>
+
+    </div>
+
+    <div id="map"></div>
+
+    unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
