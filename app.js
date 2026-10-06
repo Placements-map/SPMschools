@@ -76,9 +76,10 @@ function render() {
 
             cluster.clearLayers();
 
-            const filtered = data.filter(d =>
-                (!phase.value || d["School Phase"] === phase.value) &&
-                (!region.value || d["Region"] === region.value) &&
+const filtered = data.filter(d =>
+    (!phase.value || d["School Phase"] === phase.value) &&
+    (!region.value || d["Region"] === region.value) &&
+    (!area.value || d["Area"] === area.value) &&
                 (
                     !search.value ||
                     JSON.stringify(d)
@@ -142,12 +143,22 @@ function render() {
                             ${d["Preferred Postcode"] || ""}
                         </div>
 
-                        <hr>
-
-                        <div>
-                            Region: ${d["Region"]}
-                        </div>
-                    </div>
+                       JavaScript
+<hr>
+ 
+<div>
+Area: ${d["Area"] || ""}
+</div>
+ 
+<div>
+Local Authority:
+${d["Local Authority Area"] || ""}
+</div>
+ 
+<div>
+Region:
+${d["Region"] || ""}
+</div>
                 `);
 
                 cluster.addLayer(marker);
@@ -185,9 +196,9 @@ function render() {
             return (R * c) * 0.621371;
         }
 
-        [search, phase, region].forEach(x => {
-            x.oninput = render;
-        });
+     [search, phase, region, area].forEach(x => {
+x.oninput = render;
+});
 
         const clearFilters =
             document.getElementById("clearFilters");
@@ -196,9 +207,10 @@ function render() {
 
             clearFilters.onclick = () => {
 
-                search.value = "";
-                phase.value = "";
-                region.value = "";
+  search.value = "";
+phase.value = "";
+region.value = "";
+area.value = "";
 
                 render();
 
