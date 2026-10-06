@@ -10,7 +10,10 @@ function getPinColour(phase) {
     else if (phase && phase.includes("Secondary")) {
         colour = "violet";
     }
-    else if (phase && phase.includes("All")) {
+    else if (
+phase &&
+phase.toLowerCase().includes("all")
+) {
         colour = "orange";
     }
 
