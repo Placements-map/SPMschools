@@ -142,9 +142,13 @@ const filtered = data.filter(d =>
                             ${d["Preferred Town"] || ""}
                         </div>
 
-                        <div>
-                            ${d["Preferred Postcode"] || ""}
-                        </div>
+         <div>
+${d["Preferred Postcode"] || ""}
+</div>
+ 
+<div>
+${d["Preferred County"] || ""}
+</div>
 
                        JavaScript
 <hr>
