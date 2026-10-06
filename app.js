@@ -51,21 +51,28 @@ d => d["Visable on Map"] === "Yes"
 
         map.addLayer(cluster);
 
-        [...new Set(data.map(x => x["School Phase"]))]
-            .filter(Boolean)
-            .sort()
-            .forEach(v => {
-                phase.innerHTML += `<option value="${v}">${v}</option>`;
-            });
-
-        [...new Set(data.map(x => x["Region"]))]
-            .filter(Boolean)
-            .sort()
-            .forEach(v => {
-                region.innerHTML += `<option value="${v}">${v}</option>`;
-            });
-
-        function render() {
+[...new Set(data.map(x => x["School Phase"]))]
+.filter(Boolean)
+.sort()
+.forEach(v => {
+phase.innerHTML += `<option value="${v}">${v}</option>`;
+});
+ 
+[...new Set(data.map(x => x["Region"]))]
+.filter(Boolean)
+.sort()
+.forEach(v => {
+region.innerHTML += `<option value="${v}">${v}</option>`;
+});
+ 
+[...new Set(data.map(x => x["Area"]))]
+.filter(Boolean)
+.sort()
+.forEach(v => {
+area.innerHTML += `<option value="${v}">${v}</option>`;
+});
+ 
+function render() {
 
             cluster.clearLayers();
 
