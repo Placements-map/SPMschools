@@ -38,7 +38,11 @@ const count = document.getElementById("count");
 
 fetch("schools.json")
     .then(r => r.json())
-    .then(data => {
+  .then(data => {
+ 
+data = data.filter(
+d => d["Visable on Map"] === "Yes"
+);
 
         const cluster = L.markerClusterGroup({
             disableClusteringAtZoom: 8,
