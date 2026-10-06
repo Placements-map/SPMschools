@@ -33,6 +33,7 @@ L.tileLayer(
 const search = document.getElementById("search");
 const phase = document.getElementById("phase");
 const region = document.getElementById("region");
+const area = document.getElementById("area");
 const count = document.getElementById("count");
 
 fetch("schools.json")
