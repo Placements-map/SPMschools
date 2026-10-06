@@ -68,7 +68,7 @@ phase.innerHTML += `<option value="${v}">${v}</option>`;
 region.innerHTML += `<option value="${v}">${v}</option>`;
 });
  
-[...new Set(data.map(x => x["Area"]))]
+[...new Set(data.map(x => (x["Area"] || "").trim()))]
 .filter(Boolean)
 .sort()
 .forEach(v => {
