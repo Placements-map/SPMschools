@@ -53,12 +53,13 @@ button {
 }
 
 .result-item {
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    background: #f8f8f8;
-    border-left: 5px solid #00A3A3;
-    transition: .2s;
+padding: 12px;
+margin-bottom: 10px;
+border-radius: 10px;
+background: #f8f8f8;
+border-left: 5px solid #00A3A3;
+transition: .2s;
+cursor: pointer;
 }
 
 .result-item:hover {
