@@ -291,6 +291,31 @@ ${n.miles.toFixed(1)} miles away
  
 });
 
+                    document
+.querySelectorAll(".result-item")
+.forEach((item, index) => {
+ 
+item.style.cursor = "pointer";
+ 
+item.onclick = () => {
+ 
+const school = near[index];
+ 
+map.flyTo(
+[
+parseFloat(school["Latitude"]),
+parseFloat(school["Longitude"])
+],
+14
+);
+ 
+if (school.marker) {
+school.marker.openPopup();
+}
+ 
+};
+ 
+});
                     if (near.length > 0) {
 
                         map.setView([
