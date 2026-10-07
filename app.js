@@ -27,10 +27,10 @@ popupAnchor: [1, -34]
 }
 
 L.tileLayer(
-addTo(map);
-    {
-        attribution: "© OpenStreetMap"
-    }
+"https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+{
+attribution: "© OpenStreetMap"
+}
 ).addTo(map);
 
 const search = document.getElementById("search");
