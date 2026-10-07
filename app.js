@@ -84,10 +84,11 @@ const filtered = data.filter(d =>
     (!region.value || d["Region"] === region.value) &&
     (!area.value || d["Area"] === area.value) &&
                 (
-                    !search.value ||
-                    JSON.stringify(d)
-                        .toLowerCase()
-                        .includes(search.value.toLowerCase())
+                   !search.value ||
+Object.values(d)
+.join(" ")
+.toLowerCase()
+.includes(search.value.toLowerCase())
                 )
             );
 
