@@ -104,14 +104,16 @@ const filtered = data.filter(d =>
                     return;
                 }
 
-                const marker = L.marker(
-                    [lat, lng],
-                    {
-                        icon: getPinColour(
-                            d["School Phase"]
-                        )
-                    }
-                );
+          const marker = L.marker(
+[lat, lng],
+{
+icon: getPinColour(
+d["School Phase"]
+)
+}
+);
+ 
+d.marker = marker;
 
                 marker.bindPopup(`
                     <div style="
