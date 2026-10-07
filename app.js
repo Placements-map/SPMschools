@@ -19,20 +19,20 @@ phase.toLowerCase().includes("all")
 
 return new L.Icon({
 iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${colour}.png`,
-shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 iconSize: [25, 41],
 iconAnchor: [12, 41],
 popupAnchor: [1, -34]
 });
 }
-
+ 
 L.tileLayer(
-"https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
 {
-attribution: "© OpenStreetMap"
+attribution: '© OpenStreetMap'
 }
 ).addTo(map);
-
+ 
 const search = document.getElementById("search");
 const phase = document.getElementById("phase");
 const region = document.getElementById("region");
