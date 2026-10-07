@@ -229,6 +229,21 @@ area.value = "";
 
         render();
 
+      document
+.getElementById("postcodeSearch")
+.addEventListener("keydown", function (e) {
+ 
+if (e.key === "Enter") {
+ 
+e.preventDefault();
+ 
+document
+.getElementById("findNearest")
+.click();
+ 
+}
+ 
+});
         document
             .getElementById("findNearest")
             .onclick = async () => {
