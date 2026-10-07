@@ -27,7 +27,7 @@ popupAnchor: [1, -34]
 }
 
 L.tileLayer(
-    "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+addTo(map);
     {
         attribution: "© OpenStreetMap"
     }
@@ -258,9 +258,9 @@ document
 
                 try {
 
-                    const response = await fetch(
-                        `https://api.postcodes.io/postcodes/${encodeURIComponent(pc)}`
-                    );
+                  const response = await fetch(
+`https://api.postcodes.io/postcodes/${encodeURIComponent(pc)}`
+);
 
                     const result = await response.json();
 
