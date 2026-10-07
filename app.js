@@ -80,16 +80,18 @@ function render() {
             cluster.clearLayers();
 
 const filtered = data.filter(d =>
-    (!phase.value || d["School Phase"] === phase.value) &&
-    (!region.value || d["Region"] === region.value) &&
-    (!area.value || d["Area"] === area.value) &&
-                (
-                   !search.value ||
+(!phase.value || d["School Phase"] === phase.value) &&
+(!region.value || d["Region"] === region.value) &&
+(!area.value || d["Area"] === area.value) &&
+(
+!search.value ||
 Object.values(d)
+.filter(v => typeof v === "string" || typeof v === "number")
 .join(" ")
 .toLowerCase()
 .includes(search.value.toLowerCase())
-                )
+)
+);
             );
 
             count.innerHTML = `${filtered.length} schools`;
