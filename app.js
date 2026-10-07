@@ -92,7 +92,7 @@ Object.values(d)
 .includes(search.value.toLowerCase())
 )
 );
-            );
+            
 
             count.innerHTML = `${filtered.length} schools`;
 
