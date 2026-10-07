@@ -17,7 +17,7 @@ phase.toLowerCase().includes("all")
         colour = "orange";
     }
 
-    return new L.Icon({
+return new L.Icon({
 iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${colour}.png`,
 shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 iconSize: [25, 41],
