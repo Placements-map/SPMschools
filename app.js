@@ -171,6 +171,12 @@ ${d["Local Authority Area"] || ""}
 Region:
 ${d["Region"] || ""}
 </div>
+
+<div style="margin-top:10px;">
+${d[
+School Website
+</a>
+</div>
                 `);
 
                 cluster.addLayer(marker);
