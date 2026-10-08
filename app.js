@@ -174,7 +174,11 @@ ${d["Region"] || ""}
 
 ${d["Website"] ? `
 <div>
-🌐 <a href="${d["Website"]}" target=": ""}
+🌐 <a href="${d["Website"]}"
+target="_blank"
+rel="noopener noreferrer">
+School Website
+</
                 `);
 
                 cluster.addLayer(marker);
