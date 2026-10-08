@@ -172,9 +172,13 @@ Region:
 ${d["Region"] || ""}
 </div>
 
+${d["Website"] ? `
 <div>
-Website: ${d["Website"] || ""}
+🌐 ${d[
+School Website
+</a>
 </div>
+` : ""}
                 `);
 
                 cluster.addLayer(marker);
