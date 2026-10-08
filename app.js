@@ -174,9 +174,7 @@ ${d["Region"] || ""}
 
 ${d["Website"] ? `
 <div>
-🌐 ${d['Website']}School Website</a>
-</div>
-` : ""}
+🌐 <a href="${d["Website"]}" target=": ""}
                 `);
 
                 cluster.addLayer(marker);
