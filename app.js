@@ -174,8 +174,8 @@ ${d["Region"] || ""}
 
 ${d["Website"] ? `
 <div>
-🌐 ${d[
-${d["Website"]}
+${d['Website']}
+School Website
 </a>
 </div>
 ` : ""}
