@@ -172,10 +172,8 @@ Region:
 ${d["Region"] || ""}
 </div>
 
-<div style="margin-top:10px;">
-${d[
-School Website
-</a>
+<div>
+Website: ${d["Website"] || ""}
 </div>
                 `);
 
