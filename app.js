@@ -118,44 +118,43 @@ d["School Phase"]
  
 d.marker = marker;
 
-                marker.bindPopup(`
-                    <div style="
-                        padding:10px;
-                        min-width:220px;
-                        font-family:Segoe UI,sans-serif;
-                    ">
-                        <h3 style="
-                            margin:0 0 8px 0;
-                            color:#5B2C83;
-                        ">
-                            ${d["Full Name"]}
-                        </h3>
-
-                        <div style="
-                            font-weight:bold;
-                            color:#00A3A3;
-                            margin-bottom:8px;
-                        ">
-                            ${d["School Phase"]}
-                        </div>
-
-                        <div>
-                            📍 ${d["Preferred Address Line 1"] || ""}
-                        </div>
-
-                        <div>
-                            ${d["Preferred Town"] || ""}
-                        </div>
-
-         <div>
+     marker.bindPopup(`
+<div style="
+padding:10px;
+min-width:220px;
+font-family:Segoe UI,sans-serif;
+">
+<h3 style="
+margin:0 0 8px 0;
+color:#5B2C83;
+">
+${d["Full Name"] || ""}
+</h3>
+ 
+<div style="
+font-weight:bold;
+color:#00A3A3;
+margin-bottom:8px;
+">
+${d["School Phase"] || ""}
+</div>
+ 
+<div>
+📍 ${d["Preferred Address Line 1"] || ""}
+</div>
+ 
+<div>
+${d["Preferred Town"] || ""}
+</div>
+ 
+<div>
 ${d["Preferred Postcode"] || ""}
 </div>
  
 <div>
 ${d["Preferred County"] || ""}
 </div>
-
-                       
+ 
 <hr>
  
 <div>
@@ -171,15 +170,19 @@ ${d["Local Authority Area"] || ""}
 Region:
 ${d["Region"] || ""}
 </div>
-
+ 
 ${d["Website"] ? `
 <div>
 🌐 <a href="${d["Website"]}"
 target="_blank"
 rel="noopener noreferrer">
 School Website
-</
-                `);
+</a>
+</div>
+` : ""}
+ 
+</div>
+`);
 
                 cluster.addLayer(marker);
 
