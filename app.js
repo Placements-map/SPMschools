@@ -39,6 +39,8 @@ const region = document.getElementById("region");
 const area = document.getElementById("area");
 const count = document.getElementById("count");
 
+let postcodeMarker = null;
+
 fetch("schools.json")
     .then(r => r.json())
   .then(data => {
@@ -283,6 +285,28 @@ document
                         return;
                     }
 
+                    if (postcodeMarker) {
+    map.removeLayer(postcodeMarker);
+}
+
+postcodeMarker = L.circleMarker(
+    [
+        result.result.latitude,
+        result.result.longitude
+    ],
+    {
+        radius: 10,
+        color: "#ffffff",
+        weight: 2,
+        fillColor: "#ff0000",
+        fillOpacity: 1
+    }
+).addTo(map);
+
+postcodeMarker.bindPopup(
+    `Searched postcode: ${pc}`
+);
+``
                     const near = data
                         .map(s => ({
                             ...s,
