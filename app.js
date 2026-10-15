@@ -306,7 +306,7 @@ postcodeMarker = L.circleMarker(
 postcodeMarker.bindPopup(
     `Searched postcode: ${pc}`
 );
-``
+
                     const near = data
                         .map(s => ({
                             ...s,
