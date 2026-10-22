@@ -307,18 +307,19 @@ postcodeMarker.bindPopup(
     `Searched postcode: ${pc}`
 );
 
-                    const near = data
-                        .map(s => ({
-                            ...s,
-                            miles: distanceMiles(
-                                result.result.latitude,
-                                result.result.longitude,
-                                parseFloat(s["Latitude"]),
-                                parseFloat(s["Longitude"])
-                            )
-                        }))
-                        .sort((a, b) => a.miles - b.miles)
-                        .slice(0, 10);
+                   const near = data
+.map(s => ({
+...s,
+miles: distanceMiles(
+result.result.latitude,
+result.result.longitude,
+parseFloat(s["Latitude"]),
+parseFloat(s["Longitude"])
+)
+}))
+.sort((a, b) => a.miles - b.miles);
+ 
+console.log(near.slice(0, 20));
 
                     const div =
                         document.getElementById(
